@@ -3,6 +3,7 @@ pathes:
   /users:
     methods:
       get:
+        limit: 10
         properties:
           id:
             type: integer
@@ -22,5 +23,14 @@ pathes:
           type: integer
         name:
           type: string
+    post:
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+      response:
+        type: json
+        code: 200
 
 
