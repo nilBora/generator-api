@@ -1,0 +1,21 @@
+{
+    "name": "nilbora/generator-api",
+    "description": "Create simple api from yaml files",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Nil Borodulia",
+            "email": "brdnlsrg@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "symfony/yaml": "5.4.x-dev"
+    },
+    "autoload": {
+        "psr-4": {
+            "Jtrw\\ApiCreator\\": "src"
+        }
+    }
+}
