@@ -1,5 +1,5 @@
 table: users
-pathes:
+paths:
   /users:
     methods:
       get:
