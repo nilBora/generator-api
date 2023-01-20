@@ -4,12 +4,28 @@ namespace Jtrw\ApiCreator\ValueObject;
 
 class Paths
 {
-    public function fromArray(array $paths): static
+    /**
+     * @var Path[]
+     */
+    private array $paths;
+    
+    public static function fromArray(array $paths): static
     {
         $self = new self();
         
-        
+        $self->paths = static::setPaths($paths);
         
         return $self;
+    }
+    
+    private static function setPaths(array $paths)
+    {
+        $result = [];
+        
+        foreach ($paths as $path) {
+            $result[] = Path::fromArray($path);
+        }
+        
+        return $result;
     }
 }
