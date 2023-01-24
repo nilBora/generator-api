@@ -8,7 +8,6 @@ class Path
     {
         $self = new self();
         
-        
         return $self;
     }
 }
