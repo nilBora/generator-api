@@ -2,7 +2,7 @@
 
 namespace Jtrw\ApiCreator\ValueObject;
 
-class Type
+class RequestType
 {
     private const METHOD_GET = "get";
     private const METHOD_POST = "post";
