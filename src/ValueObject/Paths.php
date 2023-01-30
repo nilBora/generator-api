@@ -9,7 +9,7 @@ class Paths
      */
     private array $paths;
     
-    public static function fromArray(array $paths): static
+    public static function fromArray(array $paths): self
     {
         $self = new self();
         

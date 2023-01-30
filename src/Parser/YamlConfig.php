@@ -2,6 +2,7 @@
 
 namespace Jtrw\ApiCreator\Parser;
 
+use Jtrw\ApiCreator\Model\ConfigModel;
 use Symfony\Component\Yaml\Yaml;
 
 class YamlConfig
@@ -13,8 +14,8 @@ class YamlConfig
         $this->file = $file;
     }
     
-    public function parse()
+    public function parse(): ConfigModel
     {
-        return Yaml::parseFile($this->file);
+        return ConfigModel::fromArray(Yaml::parseFile($this->file));
     }
 }
