@@ -4,7 +4,7 @@ namespace Jtrw\ApiCreator\ValueObject;
 
 class Path
 {
-    public static function fromArray(array $path): static
+    public static function fromArray(array $path): self
     {
         $self = new self();
         

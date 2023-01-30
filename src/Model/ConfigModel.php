@@ -10,7 +10,7 @@ class ConfigModel
     private TableName $tableName;
     private Paths $paths;
     
-    public static function fromArray(array $fields): static
+    public static function fromArray(array $fields): self
     {
         $self = new self();
         $self->tableName = new TableName($fields['table'] ?? '');
