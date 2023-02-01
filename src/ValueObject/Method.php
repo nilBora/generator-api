@@ -19,7 +19,7 @@ class Method
         $this->properties = static::setProperties($properties);
     }
     
-    private static function setProperties(array $properties)
+    private static function setProperties(array $properties): array
     {
         $vos = [];
         foreach ($properties as $name => $property) {
