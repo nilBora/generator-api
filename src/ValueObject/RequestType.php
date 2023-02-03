@@ -4,10 +4,10 @@ namespace Jtrw\ApiCreator\ValueObject;
 
 class RequestType
 {
-    private const METHOD_GET = "get";
-    private const METHOD_POST = "post";
-    private const METHOD_DELETE = "delete";
-    private const METHOD_PUT = "put";
+    public const METHOD_GET = "get";
+    public const METHOD_POST = "post";
+    public const METHOD_DELETE = "delete";
+    public const METHOD_PUT = "put";
     
     private string $name;
     
