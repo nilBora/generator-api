@@ -2,6 +2,8 @@
 
 namespace Jtrw\ApiCreator\ValueObject;
 
+use Jtrw\ApiCreator\Factory\RequestMethodFactory;
+
 class Path
 {
     /**
@@ -24,8 +26,8 @@ class Path
     {
         $methodsVOs = [];
         foreach ($methods as $name => $method) {
-            
-            $methodsVOs[] = new Method($name, (int) $method['limit'], $method['properties']);
+            $factory = new RequestMethodFactory($name);
+            $methodsVOs[] = $factory->create($method);
         }
         return $methodsVOs;
     }

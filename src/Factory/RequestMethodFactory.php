@@ -5,16 +5,34 @@ namespace Jtrw\ApiCreator\Factory;
 use Jtrw\ApiCreator\ValueObject\GetMethod;
 use Jtrw\ApiCreator\ValueObject\MethodInterface;
 use Jtrw\ApiCreator\ValueObject\PostMethod;
+use Jtrw\ApiCreator\ValueObject\RequestType;
 
 class RequestMethodFactory
 {
-    public static function factory(string $name): MethodInterface
+    private string $name;
+    
+    public function __construct(string $name)
     {
-        switch ($name) {
-            case 'get':
-                return new GetMethod();
-            case 'post':
-                return new PostMethod();
+        $this->name = $name;
+    }
+    
+    public function create(array $method): MethodInterface
+    {
+        switch ($this->name) {
+            case RequestType::METHOD_GET:
+                return $this->createGetMethod($method['limit'], $method['properties'], $method['response']);
+            case RequestType::METHOD_POST:
+            
         }
+    }
+    
+    public function createGetMethod(int $limit, array $properties, array $response): MethodInterface
+    {
+        return new GetMethod($limit, $properties, $response);
+    }
+    
+    public function createPostMethod(): MethodInterface
+    {
+        return new PostMethod();
     }
 }
