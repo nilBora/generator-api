@@ -20,9 +20,9 @@ class RequestMethodFactory
     {
         switch ($this->name) {
             case RequestType::METHOD_GET:
-                return $this->createGetMethod($method['limit'], $method['properties'], $method['response']);
+                return $this->createGetMethod($method['limit'] ?? 0, $method['properties'] ?? [], $method['response'] ?? []);
             case RequestType::METHOD_POST:
-            
+                return $this->createPostMethod();
         }
     }
     

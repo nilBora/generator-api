@@ -17,20 +17,21 @@ paths:
           type: json
           code: 201
   /users/{id}:
-    get:
-      properties:
-        id:
-          type: integer
-        name:
-          type: string
-    post:
-      properties:
-        id:
-          type: integer
-        name:
-          type: string
-      response:
-        type: json
-        code: 200
+    methods:
+      get:
+        properties:
+          id:
+            type: integer
+          name:
+            type: string
+      post:
+        properties:
+          id:
+            type: integer
+          name:
+            type: string
+        response:
+          type: json
+          code: 200
 
 
