@@ -18,6 +18,11 @@ class EndpointService
     
     public function start()
     {
-    
+        $currentUri = $this->request->getRequestUri();
+        $paths = $this->configModel->getPaths()->toNative();
+        foreach ($paths as $path) {
+            print_r($path);exit;
+        }
+        
     }
 }

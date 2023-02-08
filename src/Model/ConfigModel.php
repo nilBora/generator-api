@@ -17,4 +17,9 @@ class ConfigModel
         $self->paths = Paths::fromArray($fields['paths']);
         return $self;
     }
+    
+    public function getPaths(): Paths
+    {
+        return $this->paths;
+    }
 }
