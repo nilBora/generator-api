@@ -28,4 +28,12 @@ class Paths
         
         return $result;
     }
+    
+    /**
+     * @return Path[]
+     */
+    public function toNative(): array
+    {
+        return $this->paths;
+    }
 }
