@@ -31,4 +31,12 @@ class Path
         }
         return $methodsVOs;
     }
+    
+    /**
+     * @return Method[]
+     */
+    public function getMethods(): array
+    {
+        return $this->methods;
+    }
 }

@@ -27,4 +27,9 @@ class Method
         }
         return $vos;
     }
+    
+    public function getName(): string
+    {
+        return $this->name;
+    }
 }

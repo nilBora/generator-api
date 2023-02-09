@@ -21,7 +21,9 @@ class EndpointService
         $currentUri = $this->request->getRequestUri();
         $paths = $this->configModel->getPaths()->toNative();
         foreach ($paths as $path) {
-            print_r($path);exit;
+            foreach ($path->getMethods() as $method) {
+                echo $method->getName();
+            }
         }
         
     }
