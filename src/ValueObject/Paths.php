@@ -12,7 +12,6 @@ class Paths
     public static function fromArray(array $paths): self
     {
         $self = new self();
-        
         $self->paths = static::setPaths($paths);
         
         return $self;
@@ -22,8 +21,8 @@ class Paths
     {
         $result = [];
         
-        foreach ($paths as $path) {
-            $result[] = Path::fromArray($path);
+        foreach ($paths as $pathName => $pathData) {
+            $result[] = new Path($pathName, $pathData);
         }
         
         return $result;
