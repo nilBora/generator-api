@@ -6,23 +6,29 @@ use Jtrw\ApiCreator\Factory\RequestMethodFactory;
 
 class Path
 {
+    private string $name;
+    
     /**
      * @var Method[]
      */
     private array $methods;
     
-    public static function fromArray(array $path): self
+    public function __construct(string $name, array $pathData)
     {
-        $self = new self();
-        $self->methods = static::setMethods($path['methods']);
-        return $self;
+        $this->name = $name;
+        $this->methods = $this->setMethods($pathData['methods']);
+    }
+    
+    public function getName(): string
+    {
+        return $this->name;
     }
     
     /**
      * @param array $methods
      * @return Method[]
      */
-    private static function setMethods(array $methods): array
+    private function setMethods(array $methods): array
     {
         $methodsVOs = [];
         foreach ($methods as $name => $method) {
