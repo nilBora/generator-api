@@ -20,10 +20,10 @@ class EndpointService
     public function start()
     {
         $currentUri = $this->request->getRequestUri();
+
         $paths = $this->configModel->getPaths()->toNative();
         foreach ($paths as $path) {
             if ($this->isMatchPathWithCurrentUri($path, $currentUri)) {
-            
             }
             foreach ($path->getMethods() as $method) {
                 echo $method->getName();
