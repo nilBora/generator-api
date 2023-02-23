@@ -23,11 +23,12 @@ class EndpointService
 
         $paths = $this->configModel->getPaths()->toNative();
         foreach ($paths as $path) {
-            if ($this->isMatchPathWithCurrentUri($path, $currentUri)) {
-                foreach ($path->getMethods() as $method) {
-                    if ($method->getName() === $this->request->getMethod()) {
-                        //do something
-                    }
+            if (!$this->isMatchPathWithCurrentUri($path, $currentUri)) {
+                continue;
+            }
+            foreach ($path->getMethods() as $method) {
+                if ($method->getName() === $this->request->getMethod()) {
+                    //do something
                 }
             }
         }
